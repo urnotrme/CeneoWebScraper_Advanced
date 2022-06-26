@@ -1,0 +1,17 @@
+{% extends 'base.html'%} 
+
+{% block title %}
+<title>Error 404</title>
+{% endblock %} 
+
+{% block body %}
+
+<div>
+  <div>
+    <img src="{{url_for('static', filename='img/')}}" alt="404 page">
+  </div>
+	<h1>{{error}}</h2>
+    <a href="/" type="submit">Home</a>
+</div>
+
+{% endblock %}

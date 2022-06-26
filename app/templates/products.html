@@ -5,5 +5,27 @@
 {% endblock%}
 
 {% block body %}
-
+<div>
+	{% for productInfo in productsInfos %}
+	<div>
+		<a href="/delete/{{productInfo.id}}">Delete</a>
+		<div>
+			Product {{productInfo.id}}:
+			<a href="/product/{{productInfo.id}}">{{productInfo.name}}</a>
+		</div>
+		<div>
+			<span>Average Score: {{productInfo.averageScore}}</span>
+			<span>Total Opinions: {{productInfo.opinions_count}}</span>
+			<span>Total Upsides: {{productInfo.upsidesCount}}</span>
+			<span>Total Downsides: {{productInfo.downsidesCount}}</span>
+		</div>
+		<div>
+			<a href="/download-json/{{productInfo.id}}">Download json</a>
+			<a href="/download-csv/{{productInfo.id}}">Download csv</a>
+			<a href="/download-xlsx/{{productInfo.id}}">Download xls</a>
+			<a href="/charts/{{productInfo.id}}">Download xls</a>
+		</div>
+	</div>
+	{%endfor%}
+</div>
 {% endblock%}

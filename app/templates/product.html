@@ -5,5 +5,38 @@
 {% endblock%}
 
 {% block body %}
-
+<div>
+	<h2>
+		Product {{product.id}}: {{product.name}}
+	</h2>
+	<form action="{{url_for(request.endpoint, **request.view_args)}}">
+		<input type="text" name="filter" placeholder="Insert filter text..."/>
+		<select name="column">
+			<option value="id" selected>id</option>
+			<option value="author">Author</option>
+			<option value="recommendation">Recommendation</option>
+			<option value="score">Score</option>
+			<option value="isPurchaseConfirmed">Confirmed purchase</option>
+			<option value="dateOpinionWritten">Review date</option>
+			<option value="dateProductBought">Purchase date</option>
+			<option value="votesYes">Usefulness</option>
+			<option value="votesNo">Uselessness</option>
+			<option value="content">Content</option>
+			<option value="upsides">Upsides</option>
+			<option value="downsides">Downsides</option>
+		</select>
+		<button type="submit">Filter</button>
+	</form>
+	<div>
+		{{ table }}
+	</div>
+	<div>
+		<a href="/download-json/{{product.id}}">Download json</a>
+		<a href="/download-csv/{{product.id}}">Download csv</a>
+		<a href="/download-xlsx/{{product.id}}">Download xls</a>
+	</div>
+	<div>
+		<a href="/charts/{{product.id}}">Charts</a>
+	</div>
+</div>
 {% endblock%}

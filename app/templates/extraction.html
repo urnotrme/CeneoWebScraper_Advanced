@@ -5,5 +5,16 @@
 {% endblock%}
 
 {% block body %}
-
+<div>
+	<h2>
+		Enter the product's id and start extracting!
+	</h2>
+  <form action="/extract" method="POST">
+    <input placeholder="Enter the id..." type="text" name="product_id">
+    {% if error %} 
+    <span>{{error}}</span>
+    {% endif %}
+    <button type="submit">Extract</button>
+  </form>
+</div>
 {% endblock%}
