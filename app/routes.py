@@ -39,11 +39,11 @@ def extract():
     except InvalidIdError:
       return redirect(url_for('extraction', error="Invalid Product ID"))
     except ProductAlreadyInDatabase:
-      return redirect(url_for('extraction', error="This Product Has Already Been Extracted And Add To Database"))
+      return redirect(url_for('extraction', error="Already In Database"))
     except OverflowError:
       return redirect(url_for('extraction', error="Invalid product ID"))
     except: 
-      return redirect(url_for('error404', error="Problems in Committing to DataBase, Please Check Your Product Id"))
+      return redirect(url_for('error404', error="Wrong ID"))
   else:
     return redirect("/extraction")
   

@@ -5,16 +5,25 @@
 {% endblock%}
 
 {% block body %}
-<div>
-	<h2>
-		Enter the product's id and start extracting!
-	</h2>
-  <form action="/extract" method="POST">
-    <input placeholder="Enter the id..." type="text" name="product_id">
-    {% if error %} 
-    <span>{{error}}</span>
-    {% endif %}
-    <button type="submit">Extract</button>
-  </form>
+<div class="content">
+  <div class="content__text"
+    data-aos="fade-zoom-in"
+    data-aos-easing="ease-in-back"
+    data-aos-delay="300"
+    data-aos-offset="0" data-aos-duration="100">
+    <h1 class="title"><span class="text__main">Search</span> Product Now!</h1>
+    <form class="search__form mt-3" action="/extract" method="POST">
+      <div class="form__input">
+        <input class="form-control" placeholder="Write there product id" type="text" name="product_id">
+        {% if error %}
+          <div class="error"><p class="mb-0 ms-2">{{error}}</p></div>
+        {% endif %}
+      </div>
+      <button class="btn mt-3" type="submit">Extract</button>
+    </form>
+  </div>
+  <div class="content__img">
+    <img data-aos="fade-up" src="../static/img/extraction.png" alt="">
+  </div>
 </div>
 {% endblock%}

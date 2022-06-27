@@ -6,12 +6,21 @@
 
 {% block body %}
 
-<div>
-  <div>
-    <img src="{{url_for('static', filename='img/')}}" alt="404 page">
+
+
+<div class="content" >
+  <div class="content__text"
+  data-aos="fade-zoom-in"
+  data-aos-easing="ease-in-back"
+  data-aos-delay="300"
+  data-aos-offset="0" data-aos-duration="100">
+      <h1 class="title">An error: <span class="text__main">{{error}}</span></h1>
+      <p class="sub__title mt-4">Are you sure you wrote the product ID right? Try again!</p>
+      <a class="btn" href="/" type="submit">Home</a>
   </div>
-	<h1>{{error}}</h2>
-    <a href="/" type="submit">Home</a>
+  <div class="content__img">
+      <img data-aos="fade-up" src="../static/img/marginalia-ecological-problems.gif" alt="">
+  </div>
 </div>
 
 {% endblock %}

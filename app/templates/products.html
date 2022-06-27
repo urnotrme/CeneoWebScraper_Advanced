@@ -5,25 +5,26 @@
 {% endblock%}
 
 {% block body %}
-<div>
+<div class="d-flex" data-aos="fade-up">
 	{% for productInfo in productsInfos %}
-	<div>
-		<a href="/delete/{{productInfo.id}}">Delete</a>
-		<div>
-			Product {{productInfo.id}}:
-			<a href="/product/{{productInfo.id}}">{{productInfo.name}}</a>
+	<div class="card m-3" style="max-width: 18rem;">
+		<div class="card-header">
+			<a class="text-danger" href="/delete/{{productInfo.id}}">Delete</a>
 		</div>
-		<div>
-			<span>Average Score: {{productInfo.averageScore}}</span>
-			<span>Total Opinions: {{productInfo.opinions_count}}</span>
-			<span>Total Upsides: {{productInfo.upsidesCount}}</span>
-			<span>Total Downsides: {{productInfo.downsidesCount}}</span>
+		<div class="card-body">
+			<h5 class="card-title mb-4"><a href="/product/{{productInfo.id}}">{{productInfo.name}}</a></h5>
+			<p class="card-text"><span class="fw-semibold">Score:</span> {{productInfo.averageScore}}</p>
+			<p class="card-text"><span class="fw-semibold">Opinions:</span> {{productInfo.opinions_count}}</p>
+			<p class="card-text"><span class="fw-semibold">Upsides:</span> {{productInfo.upsidesCount}}</p>
+			<p class="card-text"><span class="fw-semibold">Downsides:</span> {{productInfo.downsidesCount}}</p>
 		</div>
-		<div>
-			<a href="/download-json/{{productInfo.id}}">Download json</a>
-			<a href="/download-csv/{{productInfo.id}}">Download csv</a>
-			<a href="/download-xlsx/{{productInfo.id}}">Download xls</a>
-			<a href="/charts/{{productInfo.id}}">Download xls</a>
+		<div class="card-footer bg-transparent">
+			<div class="d-flex justify-content-around">
+				<a class="btn btn__format" href="/download-json/{{productInfo.id}}">JSON</a>
+				<a class="btn btn__format" href="/download-csv/{{productInfo.id}}">CSV</a>
+				<a class="btn btn__format" href="/download-xlsx/{{productInfo.id}}">XLS</a>
+				<a class="btn btn__format" href="/charts/{{productInfo.id}}">Charts</a>
+			</div>
 		</div>
 	</div>
 	{%endfor%}

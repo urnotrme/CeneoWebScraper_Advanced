@@ -5,5 +5,20 @@
 {% endblock%}
 
 {% block body %}
-<h1>Home</h1>
+
+<div class="content" >
+    <div class="content__text"
+    data-aos="fade-zoom-in"
+    data-aos-easing="ease-in-back"
+    data-aos-delay="300"
+    data-aos-offset="0" data-aos-duration="100">
+        <h1 class="title">Check out <span class="text__main">the reviews</span></h1>
+        <p class="sub__title mt-4">Hej! This is my website, that will help you to review opinions about products. And not just to read them, different diagrams will help you to make decision about purchase of the product. I hope you will enjoy it!</p>
+        <a href="/about" class="btn mt-3">Learn More</a>
+    </div>
+    <div class="content__img">
+        <img data-aos="fade-up" src="../static/img/home.png" alt="">
+    </div>
+</div>
+
 {% endblock%}

@@ -1,0 +1,124 @@
+:root{
+    /* --main_color: #8AD1DB; */
+    --main_color: #F2B6FC;
+    --black: #000000;
+    --white: #ffffff;
+}
+a{
+    text-decoration: none;
+}
+.text__main{
+    color: var(--main_color);
+}
+.main__section{
+    max-width: 1450px;
+    min-height: 71vh;
+}
+.title{
+    font-size: 56px;
+    font-weight: 500;
+}
+.sub__title{
+    font-size: 18px;
+    color: var(--black);
+    padding-right: 115px;
+}
+.btn{
+    font-size: 18px;
+    font-weight: 400;
+    background: var(--main_color);
+    color: var(--white);
+    padding: 5px 15px;
+}
+.btn:hover{
+    border: 1px solid var(--black);
+    color: var(--black);
+}
+.nav{
+    width: 100%;
+    padding: 15px 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.nav .nav__logo a{
+    color: var(--black);
+    text-decoration: none;
+}
+.nav__items{
+    display: flex;
+    align-items: center;
+}
+.nav__items .nav__item{
+    color: var(--black);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 30px;
+}
+.nav__items .nav__item:hover{
+    color: var(--main_color);
+}
+.content{
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.content .content__text{
+    width: 50%;
+}
+.form__input{
+    display: flex;
+    align-items: center;
+}
+.search__form input{
+    width: 50%;
+}
+.error p{
+    color: red;
+}
+.card{
+    border: 1px solid var(--main_color);
+}
+.card-title a{
+    color: var(--main_color);
+}
+.card-title a:hover{
+    color: var(--black);
+    margin-bottom: 10px;
+}
+.card-text{
+    color: var(--black);
+}
+.card-header{
+    background-color: var(--white);
+    border-bottom: 1px solid var(--main_color);
+}
+.card-footer{
+    border-top: 1px solid var(--main_color);
+}
+.btn__format{
+    padding: 5px 10px;
+    font-size: 16px;
+}
+.me{
+    margin-top: 100px;
+    margin-bottom: 60px;
+}
+.scroll-table-body {
+	height: 60vh;
+	overflow-x: auto;
+	margin-top: 0px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #eee;
+}
+.btns{
+    display: flex;
+    justify-content: space-around;
+}
+.diagram{
+    width: 400px;
+}
