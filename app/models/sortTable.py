@@ -2,7 +2,7 @@ from flask import url_for, request
 from flask_table import Table, Col
 
 class sort_table(Table):
-  id=Col("id")
+  id=Col("ID")
   author=Col("Author")
   recommendation=Col("Recommendation")
   score=Col("Score")

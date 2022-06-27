@@ -86,7 +86,7 @@ def productsList():
   except:
     return redirect(url_for('error404', error="There was an issue in loading products!"))
   
-@app.route("/delete/<int:id>")
+@app.route("/delete/<id>")
 def delete(id):
   try:
     productToDelete = CeneoProduct.query.get_or_404(id)
@@ -96,7 +96,7 @@ def delete(id):
   except:
     return redirect(url_for('error404', error="There was an issue in deleting this product!"))
   
-@app.route('/download-json/<int:id>')
+@app.route('/download-json/<id>')
 def downloadJson(id):
   try:
     product = CeneoProduct.query.get_or_404(id)
@@ -104,7 +104,7 @@ def downloadJson(id):
   except:
     return redirect(url_for('error404', error="Problems with downloading json!"))
     
-@app.route("/download-csv/<int:id>")
+@app.route("/download-csv/<id>")
 def downloadCsv(id):
   try:
     product = CeneoProduct.query.get_or_404(id)
@@ -113,7 +113,7 @@ def downloadCsv(id):
   except:
     return redirect(url_for('error404', error="Problems with downloading csv!"))
   
-@app.route("/download-xlsx/<int:id>")
+@app.route("/download-xlsx/<id>")
 def downloadXlsx(id):
   try:
     product = CeneoProduct.query.get_or_404(id)
@@ -123,7 +123,7 @@ def downloadXlsx(id):
     return redirect(url_for('error404', error="Problems with downloading xlsx!"))
   
 
-@app.route("/charts/<int:id>")
+@app.route("/charts/<id>")
 def plots(id):
   try:
     productFromDb = CeneoProduct.query.get_or_404(id)
